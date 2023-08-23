@@ -17,7 +17,51 @@ dns:
   - https://dns.google/dns-query
   - tls://dns.google:853
 proxies:
-- null
+- name: RELAY-172.67.180.138-003 | 6.046MB
+  server: bobbykotick.rip
+  port: 443
+  type: vmess
+  uuid: 2F094845-E2BD-EBF7-DEB7-995992436FAF
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: RELAY-172.67.180.138-003 | 6.046MB
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: Amsterdam.bobbykotick.rip
+- name: RELAY-104.21.59.157-001 | 3.783MB
+  server: bobbykotick.rip
+  port: 443
+  type: vmess
+  uuid: 2F094845-E2BD-EBF7-DEB7-995992436FAF
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: RELAY-104.21.59.157-001 | 3.783MB
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: Dusseldorf.bobbykotick.rip
+- name: RELAY-104.21.59.157-000 | 3.669MB
+  server: bobbykotick.rip
+  port: 443
+  type: vmess
+  uuid: 2F094845-E2BD-EBF7-DEB7-995992436FAF
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: RELAY-104.21.59.157-000 | 3.669MB
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: Lille.bobbykotick.rip
 proxy-groups:
 - name: Global ©️
   type: select
@@ -92,6 +136,8 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - DIRECT
+  - RELAY-172.67.180.138-003 | 6.046MB
+  - RELAY-104.21.59.157-001 | 3.783MB
+  - RELAY-104.21.59.157-000 | 3.669MB
 rules:
 - MATCH,Global ©️
